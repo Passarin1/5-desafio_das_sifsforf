@@ -1,61 +1,149 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta nameviewport="width=device-width, initial-scale=1.0">
-    <title>Painel Futurista</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Terras Invisíveis — Exploradores do Impossível</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-    <nav class="navbar">
-        <h1 class="logo">TechPanel</h1>
-        <ul>
-            <li><a href="#inicio">Início</a></li>
-            <li><a href="#servicos">Serviços</a></li>
-            <li><a href="#time">Time</a></li>
-            <li><a href="#contato">Contato</a></li>
-        </ul>
-    </nav>
+  <header class="navbar">
+    <div class="nav-inner">
+      <div class="brand">
+        <img src="sif.png" alt="logo mapa" class="logo-thumb">
+        <span>Terras Invisíveis</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#inicio">Início</a>
+        <a href="#origem">Origem</a>
+        <a href="#regioes">Regiões</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <button id="btn-collab" class="btn small">Quero Explorar</button>
+    </div>
+  </header>
 
-    <header id="inicio" class="hero">
-        <h2>Bem-vindo ao Futuro</h2>
-        <p>Tecnologia, inovação e design moderno.</p>
-        <button onclick="scrollToSection('servicos')">Explorar</button>
-    </header>
-
-    <section id="servicos" class="section">
-        <h2>Serviços</h2>
-        <div class="cards">
-            <div class="card">
-                <h3>Desenvolvimento</h3>
-                <p>Criação de sistemas e soluções digitais.</p>
-            </div>
-            <div class="card">
-                <h3>Consultoria</h3>
-                <p>Ajudamos sua empresa a crescer com tecnologia.</p>
-            </div>
-            <div class="card">
-                <h3>Automação</h3>
-                <p>Otimização de processos com ferramentas modernas.</p>
-            </div>
+  <main>
+    <!-- HERO -->
+    <section id="inicio" class="hero">
+      <div class="hero-left">
+        <h1>Explore o que jamais foi visto</h1>
+        <p class="lead">
+          Mapas que mudam com o olhar, regiões que só aparecem em sonhos — junte-se à expedição e registre o impossível.
+        </p>
+        <div class="hero-actions">
+          <a href="#mapa" class="btn" id="btn-explorar">Explorar o Mapa</a>
+          <button class="btn ghost" id="btn-registrar">Registrar Relato</button>
         </div>
+        <ul class="highlights">
+          <li>📜 Relatos enviados por exploradores</li>
+          <li>🗺️ Mapa interativo (arquivo: sif.png)</li>
+          <li>🔮 Eventos: névoa móvel e animações sutis</li>
+        </ul>
+      </div>
+
+      <figure class="hero-visual" aria-hidden="true">
+        <img src="sif.png" alt="Mapa ilustrativo das Terras Invisíveis" class="mapa flutuando">
+        <div class="fog"></div>
+      </figure>
     </section>
 
-    <section id="time" class="section">
-        <h2>Nosso Time</h2>
-        <p>Profissionais dedicados ao futuro.</p>
+    <!-- ORIGEM -->
+    <section id="origem" class="section">
+      <div class="container">
+        <h2>Origem Perdida</h2>
+        <p>
+          As Terras Invisíveis são fragmentos de memórias e ideias. Elas se manifestam em camadas paralelas — algumas nascem de sonhos, outras de pensamentos esquecidos.
+        </p>
+        <p class="muted">Os mapas mudam. Seja breve ao registrá-los; a própria expedição pode reescrever caminhos.</p>
+      </div>
     </section>
 
+    <!-- REGIÕES -->
+    <section id="regioes" class="section alt">
+      <div class="container">
+        <h2>Regiões Ocultas</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>Abismo da Memória</h3>
+            <p>Passos que retornam memórias alheias. Navegue com cautela.</p>
+          </article>
+
+          <article class="card">
+            <h3>Vale da Névoa Eterna</h3>
+            <p>Onde o ar guarda fragmentos de sonhos — visão reduzida, percepção ampliada.</p>
+          </article>
+
+          <article class="card">
+            <h3>Cidadela das Ideias Rejeitadas</h3>
+            <p>Construções feitas de pensamentos descartados: belo, instável e inspirador.</p>
+          </article>
+        </div>
+
+        <div class="map-preview">
+          <img src="sif.png" alt="Preview do mapa das Terras Invisíveis" class="mapa2">
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
     <section id="contato" class="section">
-        <h2>Contato</h2>
-        <p>Email: contato@techpanel.com</p>
+      <div class="container narrow">
+        <h2>Registrar Relato</h2>
+        <p>Compartilhe um sonho, um mapa ou um símbolo — nós registramos e arquivamos para a expedição.</p>
+
+        <form id="contact-form" class="form">
+          <label>
+            Seu nome
+            <input type="text" name="nome" id="nome" placeholder="Seu nome" required>
+          </label>
+
+          <label>
+            E-mail
+            <input type="email" name="email" id="email" placeholder="email@exemplo.com" required>
+          </label>
+
+          <label>
+            Tipo
+            <select name="tipo" id="tipo">
+              <option value="relato">Relato</option>
+              <option value="mapa">Mapa</option>
+              <option value="teoria">Teoria</option>
+            </select>
+          </label>
+
+          <label>
+            Descrição
+            <textarea name="descricao" id="descricao" placeholder="Conte o que você viu..." rows="6" required></textarea>
+          </label>
+
+          <div class="form-actions">
+            <!-- sem backend: este botão abre mailto com conteúdo preenchido -->
+            <button type="submit" class="btn">Enviar Relato por E-mail</button>
+            <button type="button" class="btn ghost" id="btn-reset">Limpar</button>
+          </div>
+        </form>
+
+        <p class="muted small">Ao enviar, seu relato será montado em um e-mail pronto. Configure o e-mail do destinatário no código (comentário em script.js).</p>
+      </div>
     </section>
+  </main>
 
-    <footer>
-        <p>Painel Futurista © 2025</p>
-    </footer>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-row">
+        <div>© 2025 Terras Invisíveis</div>
+        <nav class="footer-nav">
+          <a href="#inicio">Início</a>
+          <a href="#origem">Origem</a>
+          <a href="#regioes">Regiões</a>
+          <a href="#contato">Contato</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
 
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
